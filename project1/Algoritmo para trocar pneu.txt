@@ -2,40 +2,50 @@ Desligue o carro de forma segura
 
 Saia do carro
 
-Identifique o pneu que está com problema e o chame de pneu antigo
+Pegue o triângulo de sinalização
+  - Abra o porta-malas
+  - Retire o estofado
+  - Retire o triângulo de sinalização
+  - Coloque o estofado
+  - Feche o porta-malas
+  - Coloque o triângulo de sinalização próximo ao carro,
+  de forma que ele fique visível a outros motoristas
 
-func Pegar a ferramenta chave roda
-  - Comprar a ferramenta
-  - Pegar na caixa de ferramenta
+Identifique o pneu que está com problema
 
-func Pegar o pneu novo
-  - Compro um novo ||
-  - Pego o step no porta-malas do carro
+Pegue a ferramenta chave roda
+  - Compre a ferramenta ||
+  - Pegue na caixa de ferramenta
+
+Pegue o pneu novo
+  - Compre um novo ||
+  - Pegue o step no porta-malas do carro
      - Abra o porta-malas
      - Retire o estofado
      - Retire o step
-     - Deixe o porta-malas aberto
+     - Coloque o estofado
+     - Feche o porta-malas
 
-Levar o pneu novo até o carro
-
-func Pegar a ferramenta "macaco"
-  - Compro a ferramenta ||
-  - Pego no porta-malas do carro
-     - Vá até o porta-malas aberto e sem o estofado
+Pegue a ferramenta "macaco"
+  - Compre a ferramenta ||
+  - Pegue no porta-malas do carro
+     - Abra o porta-malas
+     - Retire o estofado
      - Retire a ferramenta macaco
      - Coloque o estofado
      - Feche o porta-malas
 
-Levar as ferramentas "macaco" e chave roda até o carro
+Leve as ferramentas macaco e chave roda e o pneu novo até o carro
 
-loop Faça o passo para todas as roscas presas do pneu antigo
+Faça para todas as roscas presas do pneu antigo:
   - Insira a chave roda em uma das roscas presas ao pneu antigo
   - Gire no sentido anti-horário até afrouxar os parafusos
   - Coloque a rosca em um lugar seguro próxima a você
+Fim
 
 Coloque a chave rosca no chão próxima a você
 
-func Instalar a ferramenta macaco no carro
+Instale a ferramenta macaco no carro
   - Procurar o lugar com suporte embaixo do carro
   - Colocar a ferramenta lá
   - Girar a manivela do macaco no sentido horário para
@@ -44,9 +54,10 @@ func Instalar a ferramenta macaco no carro
 Coloque o pneu novo embaixo do carro
   - Coloque ele próximo a você, mas embaixo do carro
 
-loop Faça o passo para todas as roscas presas do pneu antigo
+Faça o passo para todas as roscas presas do pneu antigo
   - Retire o parafuso afrouxado
   - Coloque ele em algum lugar próximo a você
+Fim
 
 Retire o pneu antigo que agora está solto
 
@@ -56,34 +67,27 @@ Pegue e encaixe o pneu novo no lugar em que estava o pneu antigo no carro
 
 Coloque o pneu antigo embaixo do carro, no mesmo lugar em que estava o pneu novo
 
-loop Faça o passo para todas as roscas que estão soltas do pneu antigo
+Faça o passo para todas as roscas que estão soltas do pneu antigo
   - Pegue uma rosca solta
   - Pegue a chave roda
   - Insira a rosca solta em algum dos espaços livres no pneu novo
   - Insira a chave roda na rosca solta
   - Gire no sentido horário até ser bem difícil de apertar a rosca solta
+Fim
 
 Retire o pneu antigo embaixo do carro e o coloque em algum lugar próximo a você
 
-func Retire a ferramenta macaco no carro
+Retire a ferramenta macaco no carro
   - Vá até a ferramenta macaco
   - Gire a manivela do macaco no sentido horário para
   descer totalmente o carro
   - Retire a ferramenta macaco de baixo do carro
 
-func Guarde tudo
+Guarde tudo
   - Abra o porta-malas
   - Retire o estofado
-  - coloque o pneu antigo
-  - coloque o estofado
+  - Coloque o pneu antigo
+  - Coloque o estofado
   - Guarde o macaco
   - Guarde a chave roda
   - Feche o porta-malas
-
-export Siga a viagem
-
-
-
-
-
-
