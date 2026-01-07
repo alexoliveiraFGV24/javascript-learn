@@ -1,0 +1,89 @@
+Desligue o carro de forma segura
+
+Saia do carro
+
+Identifique o pneu que está com problema e o chame de pneu antigo
+
+func Pegar a ferramenta chave roda
+  - Comprar a ferramenta
+  - Pegar na caixa de ferramenta
+
+func Pegar o pneu novo
+  - Compro um novo ||
+  - Pego o step no porta-malas do carro
+     - Abra o porta-malas
+     - Retire o estofado
+     - Retire o step
+     - Deixe o porta-malas aberto
+
+Levar o pneu novo até o carro
+
+func Pegar a ferramenta "macaco"
+  - Compro a ferramenta ||
+  - Pego no porta-malas do carro
+     - Vá até o porta-malas aberto e sem o estofado
+     - Retire a ferramenta macaco
+     - Coloque o estofado
+     - Feche o porta-malas
+
+Levar as ferramentas "macaco" e chave roda até o carro
+
+loop Faça o passo para todas as roscas presas do pneu antigo
+  - Insira a chave roda em uma das roscas presas ao pneu antigo
+  - Gire no sentido anti-horário até afrouxar os parafusos
+  - Coloque a rosca em um lugar seguro próxima a você
+
+Coloque a chave rosca no chão próxima a você
+
+func Instalar a ferramenta macaco no carro
+  - Procurar o lugar com suporte embaixo do carro
+  - Colocar a ferramenta lá
+  - Girar a manivela do macaco no sentido horário para
+  subir o carro até um nível satisfatório
+
+Coloque o pneu novo embaixo do carro
+  - Coloque ele próximo a você, mas embaixo do carro
+
+loop Faça o passo para todas as roscas presas do pneu antigo
+  - Retire o parafuso afrouxado
+  - Coloque ele em algum lugar próximo a você
+
+Retire o pneu antigo que agora está solto
+
+Coloque o pneu antigo em lugar próximo a você
+
+Pegue e encaixe o pneu novo no lugar em que estava o pneu antigo no carro
+
+Coloque o pneu antigo embaixo do carro, no mesmo lugar em que estava o pneu novo
+
+loop Faça o passo para todas as roscas que estão soltas do pneu antigo
+  - Pegue uma rosca solta
+  - Pegue a chave roda
+  - Insira a rosca solta em algum dos espaços livres no pneu novo
+  - Insira a chave roda na rosca solta
+  - Gire no sentido horário até ser bem difícil de apertar a rosca solta
+
+Retire o pneu antigo embaixo do carro e o coloque em algum lugar próximo a você
+
+func Retire a ferramenta macaco no carro
+  - Vá até a ferramenta macaco
+  - Gire a manivela do macaco no sentido horário para
+  descer totalmente o carro
+  - Retire a ferramenta macaco de baixo do carro
+
+func Guarde tudo
+  - Abra o porta-malas
+  - Retire o estofado
+  - coloque o pneu antigo
+  - coloque o estofado
+  - Guarde o macaco
+  - Guarde a chave roda
+  - Feche o porta-malas
+
+export Siga a viagem
+
+
+
+
+
+
