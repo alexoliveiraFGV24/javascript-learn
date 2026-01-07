@@ -8,4 +8,6 @@
 
 **Dbeaver** - Database visualizer
 
+**Lucid Chart** - Create fluxograms
+
 ## Project
