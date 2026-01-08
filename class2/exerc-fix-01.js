@@ -46,7 +46,7 @@ try {
     const f = division(a, b);
 
     // Imprimindo os resultados no navegador (aproximação em 3 casas decimais por conta da mantissa do computador) (se quiser pode retirar)
-    document.write(`<p>Os números escolhidos foram: <strong>${a}</strong> e <strong>${b}</strong></p>`)
+    document.write(`<p>Os números escolhidos foram: <strong>${a}</strong> e <strong>${b}</strong></p>`);
     document.write(`<p>A soma é: <strong>${c.toPrecision(3)}</strong></p>`);
     document.write(`<p>A subtração é: <strong>${d.toPrecision(3)}</strong></p>`);
     document.write(`<p>A multiplicação é: <strong>${e.toPrecision(3)}</strong></p>`);
