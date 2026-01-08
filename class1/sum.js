@@ -8,13 +8,6 @@ function sum(a, b) {
     return a + b;
 }
 
-// Input do usuário e definição das variáveis
-// Tome cuidado, esse prompt só funciona nos navegadores
-// const a = +prompt("Digite um número: "); // Esse + transforma em número (equivalente a Number(prompt("Digite um número: "));)
-// const b = +prompt("Digite outro número: "); 
-// const c = sum(a, b);
-
-
 // Usamos o módulo nativo 'readline' para ler a entrada do teclado
 const readline = require('readline').createInterface({
   input: process.stdin,
