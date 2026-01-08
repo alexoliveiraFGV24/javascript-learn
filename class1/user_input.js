@@ -32,6 +32,13 @@
 //         outputArea.textContent = "Please enter your name.";
 //     }
 // });
+// Pode ser dessa forma também
+// import readline from 'node:readline';  
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// });
+
 
 
 
