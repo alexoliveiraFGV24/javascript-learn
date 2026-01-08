@@ -1,38 +1,8 @@
-// Função que calcula a soma entre dois números
-function sum (a, b) {
-    if (isNaN(a) || isNaN(b)) {
-        throw new Error("Entrada inválida! Você precisa digitar números.");
-    }
+import { sum, subtraction, product, division } from './utils.js';
 
-    return a + b;
-}
+// Selecionamos a div de resultado
+const display = document.getElementById("resultado");
 
-// Função que calcula a subtração entre dois números
-function subtraction (a, b) {
-    if (isNaN(a) || isNaN(b)) {
-        throw new Error("Entrada inválida! Você precisa digitar números.");
-    }
-
-    return a - b;
-}
-
-// Função que calcula a multiplicação entre dois números
-function product (a, b) {
-    if (isNaN(a) || isNaN(b)) {
-        throw new Error("Entrada inválida! Você precisa digitar números.");
-    }
-
-    return a * b;
-}
-
-// Função que calcula a divisão entre dois números
-function division (a, b) {
-    if (isNaN(a) || isNaN(b)) {
-        throw new Error("Entrada inválida! Você precisa digitar números.");
-    }
-
-    return a / b;
-}
 
 try {
     // Pegando o input do usuário
@@ -45,14 +15,17 @@ try {
     const e = product(a, b);
     const f = division(a, b);
 
-    // Imprimindo os resultados no navegador (aproximação em 3 casas decimais por conta da mantissa do computador) (se quiser pode retirar)
-    document.write(`<p>Os números escolhidos foram: <strong>${a}</strong> e <strong>${b}</strong></p>`);
-    document.write(`<p>A soma é: <strong>${c.toPrecision(3)}</strong></p>`);
-    document.write(`<p>A subtração é: <strong>${d.toPrecision(3)}</strong></p>`);
-    document.write(`<p>A multiplicação é: <strong>${e.toPrecision(3)}</strong></p>`);
-    document.write(`<p>A divisão é: <strong>${f.toPrecision(3)}</strong></p>`);
+    // Imprimindo o conteúdo na página HTML
+    const resultados = `
+        <p>Os números escolhidos foram: <strong>${a}</strong> e <strong>${b}</strong></p>
+        <p>A soma é: <strong>${c.toPrecision(3)}</strong></p>
+        <p>A subtração é: <strong>${d.toPrecision(3)}</strong></p>
+        <p>A multiplicação é: <strong>${e.toPrecision(3)}</strong></p>
+        <p>A divisão é: <strong>${f.toPrecision(3)}</strong></p>
+    `;
+    display.innerHTML = resultados;
 
-// Caso ocorro algum erro
+// Caso aconteça um erro
 } catch (erro) {
-    document.write(`<p style="color: red;">Erro: ${erro.message}</p>`);
+    display.innerHTML = `<p style="color: red;">Erro: ${erro.message}</p>`;
 }
