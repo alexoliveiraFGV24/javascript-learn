@@ -38,4 +38,48 @@ try {
 // Caso ocorro algum erro
 } catch (erro) {
     console.log(`Erro: ${erro.message}`);
-}
+};
+
+
+
+
+/*
+VERSÃO MAIS PROFISSIONAL DO CÓDIGO
+
+import { sum, subtraction, product, division } from './utils.js';
+import readline from 'node:readline/promises';  // Tenho que usar isso por conta do export das funções no módulo utils
+
+// Usamos o módulo nativo 'readline' para ler a entrada do teclado
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+try {
+
+    // Pegando o input do usuário e processando as operações
+    let a = Number(await rl.question('Digite um número: '));
+    let b = Number(await rl.question('Digite outro número: '));
+
+    // Armazenando as variáveis dos cálculos
+    const c = sum(a, b);
+    const d = subtraction(a, b);
+    const e = product(a, b);
+    const f = division(a, b);
+
+    // Imprimindo as operações (aproximação em 3 casas decimais por conta da mantissa do computador) (se quiser pode retirar)
+    console.log(`Os números escolhidos foram: ${a} e ${b}`);
+    console.log(`A soma é: ${c.toPrecision(3)}`);
+    console.log(`A subtração é: ${d.toPrecision(3)}`);
+    console.log(`A multiplicação é: ${e.toPrecision(3)}`);
+    console.log(`A divisão é: ${f.toPrecision(3)}`);
+            
+// Caso ocorro algum erro
+} catch (erro) {
+    console.log(`Erro: ${erro.message}`);
+
+// Finalmente, fecho o readline
+} finally {
+    rl.close();
+};
+*/

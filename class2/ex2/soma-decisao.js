@@ -1,5 +1,5 @@
 import { sum } from '../ex1/utils.js';
-import readline from 'node:readline';
+import readline from 'node:readline/promises'; // Importante: Esse promises é a versão do readline que permite esperar a entrada do usuário
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -7,34 +7,21 @@ const rl = readline.createInterface({
 });
 
 try {
-    rl.question("Digite um número: ", (num1) => {
-        while (soma < 100) {
-            rl.question("Digite outro número: ", (num2) => {
 
-                let a = Number(num1);
-                let b = Number(num2);
-                let soma = sum(a, b);
+    // await serve para esperar até o o usuário digitar alguma coisa. Depois, o programa continua
+    let a = Number(await rl.question("Digite um número: "));
+    let b = Number(await rl.question("Digite outro número: "));
+    let soma = sum(a, b);
 
-                // Primeira versão
-                // if (soma < 100) {
-                //     soma = 0;
-                // };
+    while (soma < 100) {
+        let newNum = Number(await rl.question("Digite mais um número: "));
+        soma = sum(soma, newNum);
+    };
 
-                // Segunda versão
-                
-                rl.question("Digite outro número: ", (num2) => {
-                    a = num2;
-                    soma = sum(a, b);
-                    rl.close();
-                });
-
-                console.log(soma);
-
-                rl.close();
-            });
-        };
-    });
+    console.log(`Meta atingida! Soma atual é ${soma}`);
 
 } catch (erro) {
     console.log(`Erro: ${erro.message}`);
+} finally {
+    rl.close();
 };
