@@ -1,4 +1,6 @@
 import readline from "node:readline/promises";
+import { pedirNumeroValido } from "./utils.js";
+
 
 // Estrutura do readline
 const rl = readline.createInterface({
@@ -6,55 +8,35 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+
 try {
-
-    // Input do usuário
-    let num1 = Number(await rl.question("Digite um número entre 0 e 10 (se for float, o programa irá arredondar): "));
-    let num2 = Number(await rl.question("Digite outro número entre 0 e 10 (se for float, o programa irá arredondar): "));
-
-    // Validação do exercício
-    while (Number.isNaN(num1) || Number.isNaN(num2) || num1 > 10 || num1 < 0 || num2 > 10 || num2 < 0) {
-
-        // Encerrando o programa
-        if (num1 === -1 || num2 === -1) {
-            console.log("Fim do programa!");
-            process.exit(0);
-        };
-        
-        // Pedindo para digitar novamente
-        console.log("Você deve digitar números entre 0 e 10! Digite novamente!\n");
-        if (Number.isNaN(num1) || num1 > 10 || num1 < 0) {
-            num1 = Number(await rl.question("Primeiro número foi digitado incorretamente. Digite novamente: "));
-        }
-        if (Number.isNaN(num2) || num2 > 20 || num2 < 0) {
-            num2 = Number(await rl.question("Segundo número foi digitado incorretamente. Digite novamente: "));
-        }
-    };
+    // No seu código principal, fica apenas isso:
+    let num1 = await pedirNumeroValido("Digite o primeiro número (0-10): ", 0, 10);
+    let num2 = await pedirNumeroValido("Digite o segundo número (0-10): ", 0, 10);
 
     // Passar para inteiro (Math.floor é mais seguro)
+    console.log("\nArrendondando os números para baixo\n")
     num1 = Math.floor(num1);
     num2 = Math.floor(num2);
 
-    // Operações lógicas (meio força bruta)
-    if (num1 % 2 === 0) {
-        console.log(`Faltam ${100 - num1} para ${num1} (arredondado) chegar a 100!`);
-    };
-    if (num1 % 2 === 1) {
-        console.log(`Faltam ${0 - num1} para ${num1} (arredondado) chegar a 0!`);
-    };
-    if (num2 % 2 === 0) {
-        console.log(`Faltam ${100 - num2} para ${num2} (arredondado) chegar a 100!`);
-    };
-    if (num2 % 2 === 1) {
-        console.log(`Faltam ${0 - num2} para ${num2} (arredondado) chegar a 0!`);
-    };
+    // Definindo um array (só para ficar mais legível)
+    const nums = [num1, num2];  
+        
+    // Operações lógicas (percorrendo um array)
+    for (const num of nums) {
+        if (num % 2 === 0) {
+            console.log(`Falta ${100 - num} para ${num} (arredondado) chegar a 100!`);
+        } else {
+            console.log(`Falta ${0 - num} para ${num} (arredondado) chegar a 0!`);
+        };
+    }
 
-// Caso tenha erro
+// Se tiver algum erro de validação
 } catch (erro) {
     console.log(erro.message);
 
-// Fecha o programa
+// Encerra o programa
 } finally {
     rl.close();
-    console.log("Fim do programa!");  
+    console.log("\nFim do programa!");  
 };
