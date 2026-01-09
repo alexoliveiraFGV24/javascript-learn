@@ -10,7 +10,6 @@ const rl = readline.createInterface({
 
 
 try {
-    // No seu código principal, fica apenas isso:
     let num1 = await pedirNumeroValido("Digite o primeiro número (0-10): ", 0, 10);
     let num2 = await pedirNumeroValido("Digite o segundo número (0-10): ", 0, 10);
 
