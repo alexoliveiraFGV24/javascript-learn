@@ -14,8 +14,7 @@ export async function pedirNumeroValido(mensagem, min, max) {
     while (true) {
 
         // Pegando o input do usuário
-        const resposta = await rl.question(mensagem);
-        const num = Number(resposta);
+        const num = Number(await rl.question(mensagem));
 
         // Opção de saída imediata
         if (num === -1) {
@@ -24,10 +23,10 @@ export async function pedirNumeroValido(mensagem, min, max) {
         };
 
         // Validação
-        if (!Number.isNaN(num) && num >= min && num <= max) {
+        if (Number.isNaN(num) != false && num >= min && num <= max) {
             return num; // Retorna o número e sai do loop interno
         };
 
         console.log(`\nErro: Digite um número entre ${min} e ${max} (ou -1 para sair).`);
-    }
-}
+    };
+};

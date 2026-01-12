@@ -10,6 +10,8 @@ const rl = readline.createInterface({
 
 
 try {
+
+    // Nesse caso precisa do await pois a execução do programa depende do resultado das chamadas
     let num1 = await pedirNumeroValido("Digite o primeiro número (0-10): ", 0, 10);
     let num2 = await pedirNumeroValido("Digite o segundo número (0-10): ", 0, 10);
 
@@ -22,6 +24,8 @@ try {
     const nums = [num1, num2];  
         
     // Operações lógicas (percorrendo um array)
+    // in -> percorre as propriedades enumeráveis de um objeto
+    // of -> percorre os valores de uma estrutura iterável (objetos não são iteráveis)
     for (const num of nums) {
         if (num % 2 === 0) {
             console.log(`Falta ${100 - num} para ${num} (arredondado) chegar a 100!`);
