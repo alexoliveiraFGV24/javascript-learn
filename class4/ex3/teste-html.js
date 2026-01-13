@@ -20,8 +20,8 @@ function numeroInteiroValido(mensagem) {
 };
 
 // Função para retornar um valor formatado
-function formatarNumero (valor) {
-    if (valor === Number.MAX_SAFE_INTEGER || valor === Number.MIN_SAFE_INTEGER) {
+function formatarNumero (valor, array) {
+    if (array.length === 0) {
         return null;
     } else {
         return valor;
@@ -73,8 +73,8 @@ const conteudo = `
     <hr>
     <p><strong>Pares:</strong> [${pares}]</p>
     <ul>
-        <li>Menor par: ${formatarNumero(menor_par)}</li>
-        <li>Maior par: ${formatarNumero(maior_par)}</li>
+        <li>Menor par: ${formatarNumero(menor_par, pares)}</li>
+        <li>Maior par: ${formatarNumero(maior_par, pares)}</li>
     </ul>
     <p><strong>Ímpares:</strong> [${impares}]</p>
     <ul>

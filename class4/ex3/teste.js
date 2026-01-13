@@ -12,8 +12,8 @@ async function numeroInteiroValido(mensagem) {
 };
 
 // Função para retornar um valor formatado
-function formatarNumero (valor) {
-    if (valor === Number.MAX_SAFE_INTEGER || valor === Number.MIN_SAFE_INTEGER) {
+function formatarNumero (valor, array) {
+    if (array.length === 0) {
         return null;
     } else {
         return valor;
@@ -26,7 +26,7 @@ const rl = readline.createInterface({
    output: process.stdout 
 });
 
-// Definindo as variáveis
+// Definindo as variáveis (você pode mudar Number.MIN_SAFE_INTEGER e Number.MAX_SAFE_INTEGER para -Infinity e Infinity)
 const n = await numeroInteiroValido("Digite a quantidade de números: ");
 let nums = [];
 let pares = [];
@@ -70,7 +70,7 @@ rl.close();
 console.log("\nNúmeros digitados: " + nums);
 console.log("Números pares: " + pares);
 console.log("Números ímpares: " + impares);
-console.log("Menor par: " + formatarNumero(menor_par));
-console.log("Menor ímpar: " + formatarNumero(menor_impar));
-console.log("Maior par: " + formatarNumero(maior_par));
-console.log("Maior ímpar: " + formatarNumero(maior_impar));
+console.log("Menor par: " + formatarNumero(menor_par, pares));
+console.log("Menor ímpar: " + formatarNumero(menor_impar, impares));
+console.log("Maior par: " + formatarNumero(maior_par, pares));
+console.log("Maior ímpar: " + formatarNumero(maior_impar, impares));
