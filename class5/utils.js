@@ -11,10 +11,10 @@ export async function numeroInteiroValido(mensagem) {
     while (true) {
         const num = Number(await rl.question(mensagem));
 
-        if (!Number.isNaN(num)) {
+        if (!Number.isNaN(num) && num > 0 && Number.isInteger(num)) {
             return num;
         }
         
-        console.log(`\nErro: Você digitou uma string!\n`);
+        console.log(`\nErro: Você não digitou um número inteiro!\n`);
     }
-}
+};

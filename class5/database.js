@@ -11,7 +11,7 @@ export class Client {
             throw new Error("O id do cliente não está definido corretamente!")
         };
 
-        if (!name || !Number.isNaN(name)) {
+        if (!name || typeof name !== "string") {
             throw new Error("O nome do cliente não está definido corretamente!")
         };
 
@@ -27,7 +27,7 @@ export class Product {
             throw new Error("O id do produto não está definido corretamente!")
         };
 
-        if (!name || !Number.isNaN(name)) {
+        if (!name || typeof name !== "string") {
             throw new Error("O nome do produto não está definido corretamente")
         };
 
@@ -48,7 +48,7 @@ export class Product {
 
 
 export class Sale {
-    constructor(id, idClient, date, status) {
+    constructor(id, idClient, status) {
         if (id < 0 || !Number.isInteger(id)) {
             throw new Error("O id da venda não está definida corretamente!")
         };
@@ -57,18 +57,16 @@ export class Sale {
             throw new Error("O id do cliente não foi digitado corretamente")
         };
 
-        if (!date || typeof date !== 'string') {
-            throw new Error("A data da venda não está definida corretamente")
-        };
-
         if (typeof status !== 'boolean') {
             throw new Error("O status da venda não está definida corretamente")
         };
 
         this.id = id;
         this.idClient = idClient;
-        this.date = date;
         this.status = status;
+
+        const d = new Date();
+        this.date = d.toISOString().split('T')[0]; 
     }
 };
 

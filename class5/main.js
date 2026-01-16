@@ -11,11 +11,10 @@ async function main () {
         console.log("3. Cadastrar venda");
         console.log("4. Listar clientes");
         console.log("5. Listar produtos");
-        console.log("6. Listar vendas");
-        console.log("7. Cancelar venda");
-        console.log("8. Relatório de vendas");
-        console.log("9. Rankig de produtos");
-        console.log("10. Sair");
+        console.log("6. Cancelar venda");
+        console.log("7. Relatório de vendas");
+        console.log("8. Rankig de produtos");
+        console.log("9. Sair");
         
         let action = await numeroInteiroValido("Digite sua ação: ", 1, 10);
 
@@ -30,15 +29,21 @@ async function main () {
                 await CRUD.createSale();
                 break;
             case 4:
-                await CRUD.readClients();
+                CRUD.readClients();
                 break;
             case 5:
-                await CRUD.readProducts();
+                CRUD.readProducts();
                 break;
             case 6:
-                await CRUD.readSales();
+                await CRUD.cancelSale();
                 break;
-            case 10:
+            case 7:
+                CRUD.readSales();
+                break;
+            case 8:
+                CRUD.productRank();
+                break;
+            case 9:
                 console.log("\nSaindo do sistema de vendas...");
                 rl.close(); // Fecha a interface do readline
                 process.exit(0);
@@ -51,11 +56,3 @@ async function main () {
 };
 
 main();
-
-// Initialize
-// Mostra o menu
-// Rodar o processamento do CRUD com input
-// Sair 
-
-// Buscar cliente estará em listar clientes
-// Buscar produto estará em listar produtos
