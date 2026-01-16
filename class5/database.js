@@ -57,7 +57,7 @@ export class Sale {
             throw new Error("O id do cliente não foi digitado corretamente")
         };
 
-        if (typeof status !== 'boolean') {
+        if (status !== "ABERTA" || status !== "FECHADA") {
             throw new Error("O status da venda não está definida corretamente")
         };
 
