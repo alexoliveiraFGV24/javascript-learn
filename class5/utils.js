@@ -11,7 +11,7 @@ export async function numeroInteiroValido(mensagem) {
     while (true) {
         const num = Number(await rl.question(mensagem));
 
-        if (!Number.isNaN(num) && num > 0 && Number.isInteger(num)) {
+        if (!Number.isNaN(num) && num >= 0 && Number.isInteger(num)) {
             return num;
         }
         
