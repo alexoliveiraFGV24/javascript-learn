@@ -2,13 +2,17 @@ import { Client, Product, Sale, ItemSale, clientes, produtos, vendas, itensVenda
 import { rl, numeroInteiroValido } from "./utils.js";
 
 
+// Classe do sistema CRUD
 export class CRUD {
     constructor() {
+        // Criando os ids das tabelas
         this.idNextClient = 1;
         this.idNextProduct = 1;
         this.idNextSale = 1;
     };
 
+
+    // Método para criar uma instância de cliente
     async createClient () {
         try {
             let name = await rl.question("\nDigite o nome do cliente: ");
@@ -17,11 +21,11 @@ export class CRUD {
             console.log("Novo cliente adicionado!\n");
             this.idNextClient += 1;
         } catch (erro) {
-            console.log(`Erro: ${erro.message}`);
+            console.log(`Erro: ${erro.message}\n`);
         };
     };
 
-
+    // Método para ler os clientes cadastrados no sistema
     readClients () {
         console.log("\n------ Clientes cadastrados -----");
         if (clientes.size === 0) {
@@ -35,6 +39,7 @@ export class CRUD {
     };
 
 
+    // Método para criar uma instância de produto
     async createProduct () {
         try {
             let name = await rl.question("\nDigite o nome do produto: ");
@@ -45,11 +50,12 @@ export class CRUD {
             console.log("Novo produto adicionado!\n");
             this.idNextProduct += 1;
         } catch (erro) {
-            console.log(`Erro: ${erro.message}`);
+            console.log(`Erro: ${erro.message}\n`);
         };
     };
 
 
+    // Método para ler os produtos cadastrados no sistema
     readProducts () {
         console.log("\n------ Produtos cadastrados -----");
         if (produtos.size === 0) {
@@ -64,7 +70,7 @@ export class CRUD {
     };
 
 
-
+    // Método para criar uma instância de venda, juntamente com os produtos da venda
     async createSale () {
         try {
             let idClient = Number(await rl.question("\nDigite o ID do cliente: "));
@@ -108,11 +114,12 @@ export class CRUD {
             this.idNextSale += 1;
             console.log("Venda cadastrada!\n");
         } catch (erro) {
-            console.log(`Erro: ${erro.message}`);
+            console.log(`Erro: ${erro.message}\n`);
         };
     };
 
 
+    // Método para deletar uma venda
     async cancelSale() {
         const idVenda = Number(await rl.question("\nDigite o ID da venda que deseja cancelar: "));
 
@@ -150,6 +157,7 @@ export class CRUD {
     };
 
 
+    // Método para imprimir o relatório de vendas
     readSales () {
         console.log("\n------- Relatório de vendas -------");
         if (vendas.size === 0) {
@@ -170,10 +178,11 @@ export class CRUD {
     };
 
 
+    // Método para ver o ranking de produtos, por fauramento
     productRank() {
         const totaisPorProduto = new Map();
 
-        for (const [[idSale, idProduct], item] of itensVenda) {
+        for (const [[_, idProduct], item] of itensVenda) {
             const totalAtual = totaisPorProduto.get(idProduct) || 0;
             totaisPorProduto.set(idProduct, totalAtual + item.subtotal);
         };

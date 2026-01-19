@@ -1,9 +1,11 @@
+// Hash maps com endereçamento aberto para otimizar as operações para O(1) no caso médio
 export const clientes = new Map();
 export const produtos = new Map();
 export const vendas = new Map();
 export const itensVenda = new Map();
 
 
+// Classe para uma instância da tabela clientes 
 export class Client {
     constructor(id, name) {
 
@@ -21,6 +23,7 @@ export class Client {
 };
 
 
+// Classe para uma instância da tabela produtos 
 export class Product {
     constructor(id, name, price, stock) {
         if (id < 0 || !Number.isInteger(id)) {
@@ -47,6 +50,7 @@ export class Product {
 };
 
 
+// Classe para uma instância da tabela vendas 
 export class Sale {
     constructor(id, idClient, status) {
         if (id < 0 || !Number.isInteger(id)) {
@@ -72,6 +76,7 @@ export class Sale {
 };
 
 
+// Classe para uma instância da tabela itensVenda 
 export class ItemSale {
     constructor(idSale, idProduct, qtd, unitPrice) {
         if (idSale < 0 || !Number.isInteger(idSale)) {
@@ -94,6 +99,6 @@ export class ItemSale {
         this.idProduct = idProduct;
         this.qtd = qtd;
         this.unitPrice = unitPrice;
-        this.subtotal = Number(this.unitPrice * this.qtd);
+        this.subtotal = Number(this.unitPrice * this.qtd); // Fazendo o subtotal como um atributo implícito
     };
 };
