@@ -3,28 +3,29 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function(s) {
-    let l = 0;
+    let left = 0;
     let max = 0;
-    const mapa = {}; // Vamos guardar a última posição de cada letra
+    const map = {}; // Vamos guardar a última posição de cada letra
 
-    for (let r = 0; r < s.length; r++) {
-        let char = s[r];
+    for (let right = 0; right < s.length; right++) {
+        let char = s[right];
 
-        // Se a letra já apareceu E está dentro da nossa janela atual (depois de l)
-        if (mapa[char] !== undefined && mapa[char] >= l) {
-            // "Pula" o l para uma posição depois de onde a letra repetida estava
-            l = mapa[char] + 1;
+        // Se a letra já apareceu e está dentro da nossa janela atual (depois de left)
+        if (map[char] !== undefined && map[char] >= left) {
+            // "Pula" o left para uma posição depois de onde a letra repetida estava
+            left = map[char] + 1;
         }
 
-        // Atualiza a posição da letra no mapa
-        mapa[char] = r;
+        // Atualiza a posição da letra no map
+        map[char] = right;
         
         // Mede a distância entre os ponteiros
-        max = Math.max(max, r - l + 1);
+        max = Math.max(max, right - left + 1);
     }
 
     return max;
 };
+
 
 let s = "pwwkew";
 console.log(lengthOfLongestSubstring(s));
