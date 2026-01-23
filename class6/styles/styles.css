@@ -1,0 +1,33 @@
+.msg {
+    margin:12px 0;
+    padding:10px;
+    border-radius:10px;
+    display:none;
+}
+
+.msg.ok {
+    background:#e9fbe9;
+    border:1px solid #bfe8bf;
+}
+
+.msg.err {
+    background:#ffecec;
+    border:1px solid #f2b4b4;
+}
+
+.muted {
+    color:#666;
+    font-size:14px;
+}
+
+.row {
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    align-items:end;
+}
+
+.row > * {
+    flex:1;
+    min-width:180px;
+}
