@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+    <h2>Lista de tarefas</h2>
+    <ul id="lista "></ul>
+    <button onclick="adicionarLinha()" id="btn">Adicionar item</button>
+
+
+    <script>
+        function adicionarLinha () {
+            const lista = document.getElementById("lista");
+            const novoItem = document.createElement("li")
+            novoItem.innerText = "Novo item";
+            lista.appendChild(novoItem);
+        }
+    </script>
+</body>
+</html>
